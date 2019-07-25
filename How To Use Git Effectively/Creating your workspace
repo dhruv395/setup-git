@@ -1,0 +1,4 @@
+The first thing we need to do is create our workspace environment:
+mkdir -p ~/git/testing ; cd ~/git/testing
+
+We are going to create a test file to use in our repository:
