@@ -1,3 +1,6 @@
+
+https://www.digitalocean.com/community/tutorials/how-to-use-git-effectively
+
 The first thing we need to do is create our workspace environment:
 mkdir -p ~/git/testing ; cd ~/git/testing
 
@@ -10,6 +13,9 @@ git status
 git add .
 git commit -m "Initial Commit" filename
 ##Pushing changes to a remote server
+git remote add origin ssh://git@git.domain.tld/repository.git 
+git remote -v
+git push origin master
 
 
 
