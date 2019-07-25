@@ -1,0 +1,6 @@
+git config --global user.name "dhruv"
+git config --global user.email "dhruba.ray@ab.com"
+
+If you need to edit this file, you can use a text editor
+vi ~/.gitconfig
+
