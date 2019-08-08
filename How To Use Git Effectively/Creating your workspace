@@ -1,5 +1,6 @@
 
 https://www.digitalocean.com/community/tutorials/how-to-use-git-effectively
+https://www.atlassian.com/git/tutorials/saving-changes/git-stash
 
 The first thing we need to do is create our workspace environment:
 mkdir -p ~/git/testing ; cd ~/git/testing
@@ -10,12 +11,34 @@ touch file
 Converting an existing project into a workspace environment
 git init
 git status
-git add .
-git commit -m "Initial Commit" filename
+git add .                         ### will add changes to the Git staging area.
+git commit -m "Initial Commit" filename       
 ##Pushing changes to a remote server
 git remote add origin ssh://git@git.domain.tld/repository.git 
 git remote -v
 git push origin master
 
+git clone <repo url>    #git clone is used to create a copy or clone of remote repositories. 
 
+###Git stash: 
+git stash temporarily shelves (or stashes) changes you've made to your working copy so you can work on something else, 
+and then come back and re-apply them later on. 
+git stash
+###Re-applying your stashed changes
+git stash pop
+or
+git stash apply       #This is useful if you want to apply the same stashed changes to multiple branches.
+
+##Stashing untracked or ignored files
+By default, running git stash will stash:
+
+changes that have been added to your index (staged changes)
+changes made to files that are currently tracked by Git (unstaged changes)
+But it will not stash:
+
+new files in your working copy that have not yet been staged
+files that have been ignored
+So if we add a third file to our example above, but don't stage it (i.e. we don't run git add), git stash won't stash it.
+
+git stash -u    #-u option (or --include-untracked) tells git stash to also stash your untracked files:
 
